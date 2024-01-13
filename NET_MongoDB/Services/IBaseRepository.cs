@@ -7,7 +7,7 @@ namespace NET_MongoDB.Services
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetById(Expression<Func<T, bool>> predict);
-        Task CreateAsync(T category);
+        Task CreateAsync(T collection);
         Task UpdateAsync(Expression<Func<T, bool>> predict,T category);
         Task DeleteAsync(Expression<Func<T, bool>> predict);
     }

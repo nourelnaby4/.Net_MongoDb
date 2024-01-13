@@ -4,8 +4,12 @@
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string Id { get; set; } 
         public string Name { get; set; }
+        [BsonIgnoreIfNull] 
         public string CategoryId { get; set; }
+        [BsonIgnoreIfNull]
+
+        public string CategoryName { get; set; }
     }
 }

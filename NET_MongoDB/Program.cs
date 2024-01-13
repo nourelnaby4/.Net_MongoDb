@@ -1,4 +1,6 @@
 using NET_MongoDB.Config;
+using NET_MongoDB.Repository;
+using NET_MongoDB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<DatabaseSetting>(builder.Configuration.GetSection("DatabaseSetting"));
 
+
+//dependencies
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<ICategoryRepo, CategoryRepository>();
+builder.Services.AddScoped<IProductRepo, ProductRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

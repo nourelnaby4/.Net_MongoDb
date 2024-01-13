@@ -5,7 +5,7 @@ using NET_MongoDB.Services;
 
 namespace NET_MongoDB.Repository
 {
-    public class CategoryRepository : BaseRepository<Product>, IBaseRepository<Product>
+    public class CategoryRepository : BaseRepository<Category>, ICategoryRepo
     {
         public CategoryRepository(IOptions<DatabaseSetting> dbSetting) : base(dbSetting)
         {

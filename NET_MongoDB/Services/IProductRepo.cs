@@ -1,6 +1,8 @@
-﻿namespace NET_MongoDB.Services
+﻿using NET_MongoDB.Models;
+
+namespace NET_MongoDB.Services
 {
-    public class IProductRepo
+    public interface IProductRepo : IBaseRepository<Product>
     {
     }
 }
